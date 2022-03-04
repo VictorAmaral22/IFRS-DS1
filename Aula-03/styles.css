@@ -1,0 +1,180 @@
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #2E2E3A;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.Container {
+    width: 40%;
+    /* height: 30vh; */
+    background-color: #F34213;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-self: center;
+    padding-left: 2vh;
+    padding-right: 2vh;
+    padding-bottom: 2vh;
+    border-radius: 10px;
+    margin-top: 20vh;
+}
+
+.Container h3 {
+    color: #fff;
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.5em;
+}
+
+.Container p {
+    color: #fff;
+    text-align: left;
+    font-size: 1em;
+}
+
+.input {
+    /* width: 100%; */
+    border: none;
+    border-radius: 5px;
+    padding-left: 0.3em;
+    padding-right: 0.3em;
+    padding-top: 0.7em;
+    padding-bottom: 0.7em;
+    text-align: middle;
+    margin-bottom: 1vh;
+}
+
+.button {
+    width: 40%;
+    align-self: center;
+    border-radius: 5px;
+    padding: 0.5em;
+    text-align: center;
+    color: #fff;
+    border: 1px solid #fff;
+    background-color: transparent;
+    transition: all ease 0.2s;
+}
+
+.button:hover {
+    border-color: transparent;
+    background-color: #2E2E3A;
+    color: #fff;
+}
+
+.sucessoTxt, .erroTxt {
+    color: #fff;
+}
+
+.link {
+    margin-top: 3vh;
+    /* text-decoration: none; */
+    align-self: center;
+    text-align: center;
+    color: #fff;
+}
+.link a {
+    color: #fff;       
+}
+
+.link-btn {
+    width: 15%;
+    margin-top: 3vh;
+    text-decoration: none;
+    align-self: center;
+    border-radius: 5px;
+    padding: 0.5em;
+    text-align: center;
+    color: #fff;
+    border: 1px solid #fff;
+    background-color: transparent;
+    transition: all ease 0.2s;
+}
+
+.link-btn:hover {
+    border-color: transparent;
+    background-color: #F34213;
+    color: #fff;
+}
+
+.Container-table {
+    color: #fff;
+    width: 40%;
+    background-color: #F34213;
+    align-self: center;
+    padding-left: 2vh;
+    padding-right: 2vh;
+    padding-bottom: 2vh;
+    border-radius: 10px;
+    margin-top: 20vh;
+}
+.Container-table thead tr td {
+    border-bottom: 1px solid #000;
+}
+
+.button-wrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin-right: 25%;
+    margin-left: 25%;
+}
+
+.button-edit {
+    width: 7em;
+    font-size: 14px;
+    align-self: center;
+    border-radius: 5px;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+    text-align: center;
+    color: #fff;
+    border: 1px solid #fff;
+    background-color: transparent;
+    transition: all ease 0.2s;
+}
+
+.link-btn-edit {
+    width: 7em;
+    font-size: 14px;
+    text-decoration: none;
+    align-self: center;
+    border-radius: 5px;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+    text-align: center;
+    color: #fff;
+    border: 1px solid #fff;
+    background-color: transparent;
+    transition: all ease 0.2s;
+}
+
+.button-edit:hover, .link-btn-edit:hover {
+    border-color: transparent;
+    background-color: #2E2E3A;
+    color: #fff;
+}
+
+.td-btns {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.td-btns a, .td-btns button {
+    width: 20px;
+    align-items: center;
+    text-align: center;
+    text-decoration: none;
+}
