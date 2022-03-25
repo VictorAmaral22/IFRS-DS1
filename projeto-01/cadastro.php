@@ -32,8 +32,7 @@ if ($mysqli -> connect_errno) {
         $queryRes = mysqli_query($mysqli, $sql);
 
         if ($queryRes) {
-            session_cache_expire(5);
-            $cache_expire = session_cache_expire;
+            $cache_expire = session_cache_expire(5);
             session_start();
             
             $query = $mysqli->query("select id from usuario where email = '$email'");

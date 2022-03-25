@@ -11,6 +11,7 @@
     
 <?php
 $mysqli = new mysqli("localhost","root","","livraria");
+session_start();
 
 if ($mysqli -> connect_errno) {
     echo "Failed to connect to MySQL: " . $mysqli -> connect_error;
@@ -50,19 +51,17 @@ if ($mysqli -> connect_errno) {
     from livrosusuario 
         join livroexemplar on livrosusuario.livro = livroexemplar.id
         join livro on livroexemplar.livro = livro.id
-    where 
-        usuario = 1 AND
-        livrosusuario.alugado = true
+    where
+        livrosusuario.usuario = $_SESSION[id]
     order by livrosusuario.dataalugado desc";
     $res2 = mysqli_query($mysqli, $sql2);
     $livrosAlugados = [];
-    while($row = $res2->fetch_array()){
-        $livrosAlugados[] = $row;
+    while($row2 = $res2->fetch_array()){
+        $livrosAlugados[] = $row2;
     }
 }
-$mysqli->close();
 
-session_start();
+$mysqli->close();
 
 if(!isset($_SESSION['id']) || !isset($_SESSION['username'])) {
     header("refresh:0;url=index.php");
@@ -84,6 +83,7 @@ echo "<div class='grid'>";
     echo "<h3>Livros Alugados</h3>";
     if(count($livrosAlugados) === 0) {
         echo "<p>Você ainda não alugou nenhum livro...</p>";
+        print_r($livrosAlugados);
     } else {
         echo "<table>
             <thead>
@@ -134,7 +134,7 @@ echo "<div class='grid'>";
                     echo "<td>$livro[autor]</td>";
                     echo "<td>$livro[datalancamento]</td>";
                     echo "<td>$livro[descricao]</td>";
-                    echo "<td>".($livro[qtdExemplares] ? $livro[qtdExemplares] : '0')."</td>";
+                    echo "<td>".($livro['qtdExemplares'] ? $livro['qtdExemplares'] : '0')."</td>";
                     echo "<td>";
                     echo $livro['qtdExemplares'] > 0 ? "<a href='alugarLivro.php?livro=$livro[id]'>Alugar</a>" : "<p>Sem exemplares</p>";
                     echo "</td>";

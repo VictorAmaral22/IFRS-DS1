@@ -28,8 +28,8 @@ if ($mysqli -> connect_errno) {
         $queryRes = mysqli_query($mysqli, "select senha from usuario where email = '$email'");
         $fetch = $queryRes->fetch_array()[0];
         if($fetch == $hash){
-            session_cache_expire(5);
-            $cache_expire = session_cache_expire;
+            
+            $cache_expire = session_cache_expire(5);
             session_start();
 
             $userQuery = $mysqli->query("select id, username from usuario where email = '$email'");
