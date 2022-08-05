@@ -1,0 +1,7 @@
+.App {
+  text-align: center;
+  display: grid;
+  grid-template-areas: "body aside"
+                       "pares aside";
+  background-color: #010101;
+}
